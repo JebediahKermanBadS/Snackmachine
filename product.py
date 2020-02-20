@@ -29,4 +29,4 @@ class Product():
         Returns:
             string -- The string
         """
-        return f"Name: '{self.name}'\tPrice:{self.price:.2f}€\tAmount: {self.amount}"
+        return f"Price: {self.price:.2f}€\tAmount: {self.amount}\tName: '{self.name}'"
