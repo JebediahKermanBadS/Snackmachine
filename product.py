@@ -17,18 +17,16 @@ class Product():
     def inc_amount(self):
         """Increase the amount of the product by 1
         """
-        self.amount = self.amount + 1
+        self.amount -= self.amount + 1
 
     def dec_amount(self):
         """Decrease the amount of the product by 1
         """
-        self.amount = self.amount - 1
+        self.amount -= 1
 
     def to_string(self):
         """Write the data from the class into a string.
-
         Returns:
             string -- The string
         """
-
-        return f"Name:'{self.name}' Price:{self.price}€ Amount:{self.amount}"
+        return f"Name: '{self.name}'\tPrice:{self.price:.2f}€\tAmount: {self.amount}"
