@@ -1,7 +1,6 @@
 """Module for the class Snackmachine
 """
 
-import sys
 from product import Product
 
 class BankBalanceException(Exception):
@@ -39,6 +38,9 @@ class Snackmachine():
         Arguments:
             p_id {int} -- The id from the product.
         """
+        if isinstance(p_id, float):
+            p_id = int(p_id)
+
         if not isinstance(p_id, int):
             raise ValueError("The id must be an integer.")
 
@@ -73,7 +75,7 @@ class Snackmachine():
         Returns:
             str -- The bank balance. Format = 0.00€
         """
-        return f"{self.bank_balance:.2f}€"
+        return f"Your bank balance is: {self.bank_balance:.2f}€"
 
     def get_product_list(self):
         """Method to get the complete list of all products.
@@ -95,18 +97,3 @@ class Snackmachine():
             bool -- returns True if the product exists and False if not.
         """
         return self.products.keys().__contains__(p_id)
-
-def main():
-    """Main method
-    """
-
-    machine = Snackmachine()
-
-    machine.pay_money_in(200)
-    try:
-        machine.buy_product(9)
-    except BankBalanceException:
-        print(sys.exc_info()[1])
-
-if __name__ == "__main__":
-    main()
