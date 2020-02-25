@@ -1,0 +1,46 @@
+<products>
+    <product id="1" name="Mars">
+        <price>1.20</price>
+        <amount>2</amount>
+    </product>
+    <product id="2" name="Twix">
+        <price>1.20</price>
+        <amount>3</amount>
+    </product>
+    <product id="3" name="Duplo">
+        <price>0.60</price>
+        <amount>9</amount>
+    </product>
+    <product id="4" name="Pringels">
+        <price>1.50</price>
+        <amount>7</amount>
+    </product>
+    <product id="5" name="Raffaello">
+        <price>0.80</price>
+        <amount>8</amount>
+    </product>
+    <product id="6" name="PickUp">
+        <price>0.80</price>
+        <amount>11</amount>
+    </product>
+    <product id="7" name="Hanuta">
+        <price>0.80</price>
+        <amount>5</amount>
+    </product>
+    <product id="8" name="Kinder Riegel">
+        <price>0.60</price>
+        <amount>0</amount>
+    </product>
+    <product id="9" name="Kinder Country">
+        <price>1.20</price>
+        <amount>1</amount>
+    </product>
+    <product id="10" name="Bueno">
+        <price>1.20</price>
+        <amount>0</amount>
+    </product>
+    <product id="11" name="Corny">
+        <price>1.20</price>
+        <amount>3</amount>
+    </product>
+</products>

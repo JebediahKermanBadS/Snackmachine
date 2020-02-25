@@ -4,6 +4,7 @@
 import sys
 import snackmachine
 
+
 def main():
     """The main method for the snackmachine script.
     """
@@ -43,6 +44,7 @@ def main():
 
         else:
             print("Unknown command. Try again.")
+
 
 if __name__ == "__main__":
     main()
