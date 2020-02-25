@@ -4,7 +4,6 @@
 import sys
 import my_snackmachine
 
-
 def main():
     """The main method for the snackmachine script.
     """
@@ -12,11 +11,11 @@ def main():
     machine = my_snackmachine.Snackmachine()
 
     cmd_func_dic = {
-        "payin": [machine.pay_money_in, 1],
-        "buyprod": [machine.buy_product, 1],
-        "printprod": [machine.get_product_list, 0],
-        "printmoney": [machine.get_bank_balance, 0],
-        "exit": [exit, 0]
+        "payin": [machine.pay_money_in, 1, " - PayIn <amount>\tPay money into your bank account."],
+        "buypr": [machine.buy_product, 1, " - BuyPr <pr_id>\tBuy a product."],
+        "bb": [machine.get_bank_balance, 0, " - bb\t\t\tGet your current bank balance."],
+        "pl": [machine.get_product_list, 0, " - pl\t\t\tGet a list of all products."],
+        "exit": [exit, 0, " - exit\t\t\tExit"]
     }
 
     while True:
@@ -41,10 +40,13 @@ def main():
 
             except ValueError:
                 print(sys.exc_info()[1])
-
+        elif cmd == "help":
+            print("------COMMANDS---------------------------------------------------")
+            for func in cmd_func_dic.values():
+                print(func[2])
+            print("-----------------------------------------------------------------")
         else:
             print("Unknown command. Try again.")
-
 
 if __name__ == "__main__":
     main()

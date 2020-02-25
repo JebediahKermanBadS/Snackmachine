@@ -2,7 +2,7 @@
     <user id="1" name="TestUser1">
         <password>1234</password>
         <salt />
-        <bank_balance>5.1</bank_balance>
+        <bank_balance>3.8999999999999995</bank_balance>
     </user>
     <user id="2" name="TestUser2">
         <password>1234</password>

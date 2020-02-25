@@ -8,7 +8,6 @@ class User():
     """
     _path_xmlFile = "./saves/users.xml"
     _tree = ElementTree.parse(_path_xmlFile)
-    _root = _tree.getroot()
 
     def __init__(self, username):
         user = User.get_user_element(username)
@@ -37,7 +36,7 @@ class User():
     @staticmethod
     def get_user_element(username):
         """Method"""
-        for user in list(User._root):
+        for user in list(User._tree.getroot()):
             if username.lower() == user.attrib["name"].lower():
                 return user
 
@@ -45,10 +44,10 @@ class User():
     def add_user(username, password):
         """Method"""
         attributes = {
-            "id": f'{len(User._root) + 1}',
+            "id": f'{len(User._tree.getroot()) + 1}',
             "name": username
         }
-        user = ElementTree.SubElement(User._root, "user", attributes)
+        user = ElementTree.SubElement(User._tree.getroot(), "user", attributes)
         user.text = "\n\t\t"
         user.tail = "\n"
 
