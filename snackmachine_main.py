@@ -2,14 +2,14 @@
 """
 
 import sys
-import snackmachine
+import my_snackmachine
 
 
 def main():
     """The main method for the snackmachine script.
     """
 
-    machine = snackmachine.Snackmachine()
+    machine = my_snackmachine.Snackmachine()
 
     cmd_func_dic = {
         "payin": [machine.pay_money_in, 1],
@@ -33,10 +33,10 @@ def main():
                 else:
                     print(func[0]())
 
-            except snackmachine.BankBalanceException:
+            except my_snackmachine.BankBalanceException:
                 print(sys.exc_info()[1])
 
-            except snackmachine.ProductException:
+            except my_snackmachine.ProductException:
                 print(sys.exc_info()[1])
 
             except ValueError:
