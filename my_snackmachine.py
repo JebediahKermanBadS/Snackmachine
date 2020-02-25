@@ -1,7 +1,7 @@
 """Module for the class Snackmachine
 """
 
-from user import User
+from user import User, UserException
 from product import Product
 
 class BankBalanceException(Exception):
@@ -16,8 +16,15 @@ class Snackmachine():
     """The class Snackmachine
     """
     def __init__(self):
-        self.current_user = User("TestUser1")
+        self.current_user = None
         self.products = Product.get_product_dic()
+
+    def set_user(self, username, password):
+        """TODO dokumentation"""
+        if User.check_user_password(username, password):
+            self.current_user = User(username)
+        else:
+            raise UserException("The entered password was not correct. Please try again.")
 
     def buy_product(self, p_id):
         """Method to buy a product
@@ -60,8 +67,10 @@ class Snackmachine():
         Returns:
             str -- The bank balance. Format = 0.00€
         """
-        return (f"Hello '{self.current_user.name}'. "
-                f"Your bank balance is: {self.current_user.get_bank_balance():.2f}€")
+        if self.current_user is None:
+            raise UserException("No user selected.")
+
+        return f"{self.current_user.get_bank_balance():.2f}€"
 
     def get_product_list(self):
         """Method to get the complete list of all products.

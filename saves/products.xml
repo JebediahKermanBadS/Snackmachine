@@ -1,7 +1,7 @@
 <products>
     <product id="1" name="Mars">
         <price>1.20</price>
-        <amount>2</amount>
+        <amount>0</amount>
     </product>
     <product id="2" name="Twix">
         <price>1.20</price>
@@ -13,11 +13,11 @@
     </product>
     <product id="4" name="Pringels">
         <price>1.50</price>
-        <amount>7</amount>
+        <amount>6</amount>
     </product>
     <product id="5" name="Raffaello">
         <price>0.80</price>
-        <amount>8</amount>
+        <amount>7</amount>
     </product>
     <product id="6" name="PickUp">
         <price>0.80</price>
@@ -25,7 +25,7 @@
     </product>
     <product id="7" name="Hanuta">
         <price>0.80</price>
-        <amount>5</amount>
+        <amount>4</amount>
     </product>
     <product id="8" name="Kinder Riegel">
         <price>0.60</price>

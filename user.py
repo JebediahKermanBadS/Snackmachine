@@ -3,6 +3,10 @@
 
 from xml.etree import ElementTree
 
+class UserException(Exception):
+    """Call if there is some error with user
+    """
+
 class User():
     """User class
     """
@@ -18,7 +22,7 @@ class User():
         """Method"""
         self._bank_balance = new_bank_balance
 
-        User.get_user_element(self.name).find("bank_balance").text = str(new_bank_balance)
+        User.get_user_element(self.name).find("bank_balance").text = f"{new_bank_balance:.2f}"
         User._tree.write(User._path_xmlFile)
 
     def get_bank_balance(self):
@@ -39,6 +43,8 @@ class User():
         for user in list(User._tree.getroot()):
             if username.lower() == user.attrib["name"].lower():
                 return user
+
+        raise UserException(f"Cant find a user with the username '{username}'. Please try again.")
 
     @staticmethod
     def add_user(username, password):

@@ -1,27 +1,17 @@
 <users>
-    <user id="1" name="TestUser1">
-        <password>1234</password>
+    <user id="1" name="test_user_1">
+        <password>user1</password>
         <salt />
-        <bank_balance>3.8999999999999995</bank_balance>
+        <bank_balance>3.30</bank_balance>
     </user>
-    <user id="2" name="TestUser2">
-        <password>1234</password>
+    <user id="2" name="test_user_2">
+        <password>user2</password>
         <salt />
-        <bank_balance>10.0</bank_balance>
+        <bank_balance>6.20</bank_balance>
     </user>
-    <user id="3" name="TestUser3">
-        <password>1234</password>
+    <user id="3" name="test_user_3">
+        <password>user3</password>
         <salt />
-        <bank_balance>10.0</bank_balance>
+        <bank_balance>3.10</bank_balance>
     </user>
-<user id="4" name="TestUser4">
-		<password>12345</password>
-		<salt> </salt>
-		<bank_balance />
-	</user>
-<user id="5" name="TestUser4">
-		<password>12345</password>
-		<salt> </salt>
-		<bank_balance />
-	</user>
 </users>

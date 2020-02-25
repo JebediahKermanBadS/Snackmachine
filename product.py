@@ -60,7 +60,6 @@ class Product():
         for _p in list(Product._tree.getroot()):
             if int(_p.attrib["id"]) == product_id:
                 _p.find("amount").text = str(amount)
-                print(_p.find("amount").text)
 
                 Product._tree.write(Product._path_xmlFile)
 
