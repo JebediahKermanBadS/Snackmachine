@@ -3,11 +3,9 @@
 
 from xml.etree import ElementTree
 
-
 class Product():
     """A class to store data from a product
     """
-
     _path_xmlFile = "./saves/products.xml"
     _tree = ElementTree.parse(_path_xmlFile)
 
@@ -33,9 +31,7 @@ class Product():
 
     def to_string(self):
         """Method"""
-        return (f"Price: {self.price:.2f}€\t"
-                f"Amount: {self.amount}\t"
-                f"Name: '{self.name}'")
+        return f"Price: {self.price:.2f}€\tAmount: {self.amount}\tName: '{self.name}'"
 
     @staticmethod
     def get_product_dic():
@@ -67,7 +63,6 @@ class Product():
                 print(_p.find("amount").text)
 
                 Product._tree.write(Product._path_xmlFile)
-
 
 if __name__ == "__main__":
     pass

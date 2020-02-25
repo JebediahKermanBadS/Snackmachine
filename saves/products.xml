@@ -5,7 +5,7 @@
     </product>
     <product id="2" name="Twix">
         <price>1.20</price>
-        <amount>3</amount>
+        <amount>2</amount>
     </product>
     <product id="3" name="Duplo">
         <price>0.60</price>

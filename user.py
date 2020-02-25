@@ -3,18 +3,28 @@
 
 from xml.etree import ElementTree
 
-
 class User():
     """User class
     """
-
-    _tree = ElementTree.parse("./saves/users.xml")
+    _path_xmlFile = "./saves/users.xml"
+    _tree = ElementTree.parse(_path_xmlFile)
     _root = _tree.getroot()
 
     def __init__(self, username):
         user = User.get_user_element(username)
         self.name = username
-        self.bank_balance = float(user.find("bank_balance").text)
+        self._bank_balance = float(user.find("bank_balance").text)
+
+    def set_bank_balance(self, new_bank_balance):
+        """Method"""
+        self._bank_balance = new_bank_balance
+
+        User.get_user_element(self.name).find("bank_balance").text = str(new_bank_balance)
+        User._tree.write(User._path_xmlFile)
+
+    def get_bank_balance(self):
+        """Method"""
+        return self._bank_balance
 
     @staticmethod
     def check_user_password(username, password):
@@ -54,8 +64,7 @@ class User():
         element_salt.text = 0.0
         element_salt.tail = "\n\t"
 
-        User._tree.write("users.xml")
-
+        User._tree.write(User._path_xmlFile)
 
 if __name__ == "__main__":
     pass
